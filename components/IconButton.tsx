@@ -1,16 +1,18 @@
-import {EvilIcons} from "@expo/vector-icons";
-import {Text, View} from "react-native";
+import { View, Text } from 'react-native';
+import { EvilIcons } from '@expo/vector-icons';
 
-type IconButtonPropsType = {
-    icon: React.ComponentProps<typeof EvilIcons>['name'],
-    text?: string | number,
-}
+type IconButtonProps = {
+  icon: React.ComponentProps<typeof EvilIcons>['name'];
+  text?: string | number;
+};
 
-export const IconButton = ({icon, text}: IconButtonPropsType) => {
-    return (
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <EvilIcons name={icon} size={22} color='gray'/>
-            <Text style={{fontSize: 12, color: 'gray'}}>{text}</Text>
-        </View>
-    )
-}
+const IconButton = ({ icon, text }: IconButtonProps) => {
+  return (
+    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      <EvilIcons name={icon} size={22} color="gray" />
+      <Text style={{ fontSize: 12, color: 'gray' }}>{text}</Text>
+    </View>
+  );
+};
+
+export default IconButton;
